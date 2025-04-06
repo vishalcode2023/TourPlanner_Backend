@@ -17,8 +17,12 @@ const BusRouter = require('./Router/BusRouter');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    return callback(null, true); // Accept all origins
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // optional: if you're using cookies/auth headers
+  credentials: true
 }));
 
 
