@@ -17,7 +17,6 @@ const BusRouter = require('./Router/BusRouter');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: ['https://tour-planner-front-end.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // optional: if you're using cookies/auth headers
 }));
